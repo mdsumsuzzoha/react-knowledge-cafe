@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const Blog = ({ blog, handleAddBoormark, handleAddReadTime }) => {
     // const { handleAddBoormark } = props;
     // console.log(blog);
-    const { title, cover_image_url, author, author_img, post_date, reading_time, hashtag } = blog;
+    const {id, title, cover_image_url, author, author_img, post_date, reading_time, hashtag } = blog;
     return (
         <div className='my-6 px-2'>
             <img className='rounded' src={cover_image_url} alt="" />
@@ -25,7 +25,7 @@ const Blog = ({ blog, handleAddBoormark, handleAddReadTime }) => {
                 {hashtag}
             </a>
             <br />
-            <button onClick={() => handleAddReadTime(reading_time)}>Mark as Read</button>
+            <button onClick={() => handleAddReadTime(reading_time, id)}>Mark as Read</button>
 
         </div>
     );
